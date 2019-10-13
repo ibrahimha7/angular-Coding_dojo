@@ -1,26 +1,23 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+
+import { HttpService } from './http.service';
 import { HttpClientModule } from '@angular/common/http';
 
-import { AppRoutingModule } from './/app-routing.module';
-import { RouterModule, Routes } from '@angular/router';
-
-import { AppComponent } from './app.component';
-import { TasksComponent } from './tasks/tasks.component';
-import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
+  declarations: [
+    AppComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  declarations: [
-    AppComponent,
-    TasksComponent,
-    MessagesComponent
-  ],
+  providers: [HttpService],
   bootstrap: [AppComponent]
 })
-
 export class AppModule { }

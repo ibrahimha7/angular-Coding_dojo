@@ -1,16 +1,9 @@
-module.exports = function(db) {
+var fs = require("fs");
+var path = require("path");
 
-    const mongoose = require('mongoose'),
-        path = require('path'),
-        fs = require('fs'),
-        models_path = path.join(__dirname, './../models')
+var models_path = path.join(__dirname, "./../models");
 
-    mongoose.connect(db, { useNewUrlParser: true,useUnifiedTopology: true });
-
-    fs.readdirSync(models_path).forEach(function(file) {
-    if(file.endsWith('.js')) {
-        require(models_path + '/' + file);
-       }
-    })
-
-}
+fs.readdirSync(models_path).forEach(function(file){
+	if(file.indexOf(".js") >= 0)
+		require(models_path+"/"+file);
+});

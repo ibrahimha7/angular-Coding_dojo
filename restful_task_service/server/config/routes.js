@@ -1,15 +1,14 @@
-module.exports = function(app) {
+var tasks = require("../controllers/tasks.js");
 
-    const task = require('../controllers/tasks.js');
+module.exports = function(app){
 
-    // GET '/tasks' - retrieve all tasks
-    app.get('/tasks', function(req, res) {
-        task.index(req, res);
-    });
+    app.get("/tasks", tasks.index)
 
-    // GET '/tasks/:id' - list task for that id
-    app.get('/tasks/:id', function(req, res) {
-        task.find_task(req, res);
-    });
+    app.get("/tasks/:id", tasks.details)
 
+    app.post("/tasks", tasks.addTask)
+
+    app.put("/tasks/:id", tasks.editTask)
+
+    app.delete("/tasks/:id", tasks.deleteTask)
 }

@@ -1,16 +1,11 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { TasksComponent } from './tasks/tasks.component';
+import { Routes, RouterModule } from '@angular/router';
 
 
-const routes: Routes = [
-  { path: 'task/:id', component: TasksComponent },
-  { path: 'tasks', component: TasksComponent }
-];
+const routes: Routes = [];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
-  exports: [ RouterModule ]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
-
 export class AppRoutingModule { }

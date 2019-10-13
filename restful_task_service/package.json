@@ -1,16 +1,24 @@
 {
-  "name": "restful_task_service",
+  "name": "Restful_Task_API",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdulrabbt/Restful_Task_API.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abdulrabbt/Restful_Task_API/issues"
+  },
+  "homepage": "https://github.com/abdulrabbt/Restful_Task_API#readme",
   "dependencies": {
-    "ejs": "^2.7.1",
     "express": "^4.17.1",
     "mongoose": "^5.7.4"
   }

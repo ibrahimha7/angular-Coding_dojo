@@ -1,17 +1,15 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const path = require('path');
-const app = express();
+var express = require("express");
+var app = express();
+var mongoose = require("mongoose");
 
-app.use(bodyParser.json()); 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-app.use(express.static(path.join(__dirname + '/public/dist/public')));
+mongoose.connect("mongodb://localhost/restful_task_API", {useNewUrlParser: true, useUnifiedTopology: true});
+require("./server/config/mongoose.js");
 
-const db = 'mongodb://localhost/quoting';
+require("./server/config/routes.js")(app);
 
-require('./server/config/mongoose.js')(db);
-require('./server/config/routes.js')(app);
-
-app.listen(8000, function() {
-    console.log('Listening on port 8000');
-});
+app.listen(8000, function(){
+    console.log("Listening on port: 8000");
+})

@@ -1,9 +1,9 @@
-const mongoose = require('mongoose');
+var mongoose = require("mongoose");
 
-const TaskSchema = new mongoose.Schema ({
-    title: { type: String, required: true, minlength: 3, maxlength: 64 },
-    description: { type: String, required: true, minlength: 3, maxlength: 255 },
-    completed: { type: Boolean, required: true }
-}, { timestamps: true });
+var TaskSchema = new mongoose.Schema({
+    title: {type: String, default: ""},
+    description: {type: String, default: ""},
+    completed: {type: Boolean, default: false},
+}, {timestamps: {createdAt: "created_at", updatedAt: "updated_at"}});
 
-mongoose.model('Task',TaskSchema);
+mongoose.model("Task", TaskSchema);
