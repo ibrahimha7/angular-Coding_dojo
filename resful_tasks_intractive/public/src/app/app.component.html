@@ -1,0 +1,13 @@
+<div>
+    <div>
+        <h1>Restful Task API</h1>
+        <app-task *ngIf="green" [taskToShow]="selected_task"></app-task> 
+        <button (click)="allTasksClick()">Get All Tasks</button>
+        <div *ngFor="let r of recievec; let idx = index">
+            <p>{{r.title}}...<button (click)="taskToShow(idx)">show</button></p>
+        </div>
+        <app-task *ngIf="green" [taskToShow]="selected_task"></app-task> 
+       
+      
+      </div>
+</div>
