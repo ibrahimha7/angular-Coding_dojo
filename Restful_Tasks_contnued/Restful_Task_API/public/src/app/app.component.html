@@ -1,0 +1,14 @@
+<div>
+  <app-task></app-task>
+  <div>
+    <h1>Restful Task API</h1>
+    <h2>All the tasks:</h2>
+    <p *ngFor="let r of recievec">
+        {{r.title}}: {{r.description}}
+    </p>
+  
+    <!-- <h2>The Third Task:</h2>
+    <p *ngIf="recievec.length">Bind events: paranthases indicate events</p>
+    <button (click)="onButtonClickParam(5)">Click me!</button> -->
+  </div>
+</div>
