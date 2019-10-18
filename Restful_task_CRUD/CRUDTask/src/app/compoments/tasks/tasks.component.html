@@ -1,0 +1,34 @@
+<div>
+    <div>
+        <h1>New Tasks</h1>
+        <form (submit)="onSubmit()">
+            <label>Title</label> <br>
+            <input type="text" name="title" [(ngModel)]="newTask.title"><br>
+            <label>Description</label><br>
+            <input type="text" name="description" [(ngModel)]="newTask.description"><br>
+            <button>Post</button><br>
+        </form>
+        <hr>
+    </div>
+    <h1>Tasks List</h1>
+    <div *ngFor="let item of tasks">
+        <h4>{{item.title}}</h4>
+        <p>{{item.description}}</p>
+        <button (click)="GetTask(item._id)">Edit</button>
+        <!-- Delete the info -->
+        <button (click)="DeleteTask(item._id)">Delete</button>
+    </div>
+
+    <!-- Update the info -->
+    <div *ngIf="getTaskByid">
+        <form (submit)="EditTask()">
+            <label>New Title</label> <br>
+            <input type="text" name="title" [(ngModel)]="updateTask.title" /> <br>
+            <label >New Description</label> <br>
+            <input type="text" class="form-control" name="description" [(ngModel)]="updateTask.description" /> <br>
+            <input type="submit" value="Update Task" />
+        </form>
+    </div>
+
+
+</div>
