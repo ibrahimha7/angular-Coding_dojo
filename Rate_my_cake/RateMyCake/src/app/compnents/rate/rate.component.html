@@ -1,0 +1,27 @@
+<div>
+    <h2>{{title}}</h2>
+
+    <h2>Add User</h2>
+    <form (submit)="onSubmit($event)">
+        <div class="form-group">
+            <label>Cake Name</label>
+            <input type="text" [(ngModel)]="cake.name" name="name">
+            {{cake.name}}
+        </div>
+        <div class="form-group">
+            <label>Cake Image</label>
+            <input type="text" [(ngModel)]="cake.img" name="cake.img">
+        </div>
+
+        <button (click)="addCake()">Add New Cake</button>
+    </form>
+
+
+    <h3>List of cakes</h3>
+    <div *ngFor="let item of cakes">
+        <h5>{{item.name}}</h5><br>
+        <h5>{{item.img}}</h5>
+        <p>{{item.rate}}</p>
+    </div>
+
+</div>
